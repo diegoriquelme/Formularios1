@@ -1,0 +1,22 @@
+
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+  <input formControlName="name" placeholder="Your name">
+         <p>el nombre elegido: {{ myForm.get('name').value }}</p>
+      <div *ngIf="myForm.get('name').hasError('required')">
+          nombre
+      </div>
+  <input formControlName="email" placeholder="Your email">
+      <div *ngIf="myForm.controls.email.hasError('pattern')">
+         ingresar correo
+     </div>
+  <input formControlName="message" placeholder="Your message">
+       <div *ngIf="myForm.controls.message.errors.minlength">
+             error de largo
+       </div>
+      <button type="submit" [disabled]="myForm.invalid">
+         Enviar
+      </button>
+</form>
+
+
