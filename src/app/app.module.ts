@@ -7,8 +7,20 @@ import { ComponentsComponent } from './components/components.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { TemplateFormComponent } from './components/template-form/template-form.component';
 import { FormsModule } from '@angular/forms';
-import { PokeListComponent } from './components/poke-list/poke-list.component'
+import { PokeListComponent } from './components/poke-list/poke-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { HttpClientModule } from '@angular/common/http';
+import { ServiciosService } from './Servicios/servicios.service';
+import {MatCardModule} from '@angular/material/card';
+import { PokedetallesComponent } from './components/pokedetalles/pokedetalles.component';
+import { Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
+
+const routes: Routes = [
+{path: 'poke-list', component: PokeListComponent },
+{path: 'pokedetalles', component: PokedetallesComponent }
+];
 
 @NgModule({
   declarations: [
@@ -16,12 +28,13 @@ import { PokeListComponent } from './components/poke-list/poke-list.component'
     ComponentsComponent,
     ReactiveFormComponent,
     TemplateFormComponent,
-    PokeListComponent],
+    PokeListComponent,
+    PokedetallesComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule,FormsModule
+    AppRoutingModule,ReactiveFormsModule,FormsModule, BrowserAnimationsModule, HttpClientModule,MatCardModule,PokedetallesComponent,PokeListComponent,RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [ServiciosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
