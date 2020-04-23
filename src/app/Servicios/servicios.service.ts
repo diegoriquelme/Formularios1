@@ -13,8 +13,12 @@ export class ServiciosService {
 pokeApi():any{
     const urlAPI=`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=964`;
     return this._http.get(urlAPI);
-/*     const url = `https://pokemones/${poke.name}` */
-/*  */
+}
+
+
+pokeDetails(pokename):any{
+const url=`https://pokeapi.co/api/v2/pokemon/${pokename}/`;
+return this._http.get(url);
 }
 
 }

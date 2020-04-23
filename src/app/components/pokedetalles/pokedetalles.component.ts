@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ServiciosService} from '../../Servicios/servicios.service';
+import {MatTableModule} from '@angular/material/table';
 
 @Component({
   selector: 'app-pokedetalles',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokedetallesComponent implements OnInit {
 
-  constructor() { }
+
+  pokeinfo = {name:""};
+
+  constructor(
+    private _servicio:ServiciosService,
+    private router: Router,
+    private route: ActivatedRoute,
+    //private location: Location,
+
+  ) { }
+
 
   ngOnInit() {
+    this.getPokemon();
   }
+
+  getPokemon() {
+    this.route.params.subscribe(res => {
+      this._servicio.pokeDetails(res.name).subscribe(pokeDetails =>{
+        console.log(pokeDetails)
+        this.pokeinfo = pokeDetails;
+      })
+    });
+
+}
 
 }

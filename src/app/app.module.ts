@@ -15,12 +15,11 @@ import {MatCardModule} from '@angular/material/card';
 import { PokedetallesComponent } from './components/pokedetalles/pokedetalles.component';
 import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import {MatFormFieldModule,MatButtonModule,MatInputModule, MatSelectModule} from '@angular/material';
 
 
-const routes: Routes = [
-{path: 'poke-list', component: PokeListComponent },
-{path: 'pokedetalles', component: PokedetallesComponent }
-];
+
+
 
 @NgModule({
   declarations: [
@@ -32,7 +31,7 @@ const routes: Routes = [
     PokedetallesComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule,FormsModule, BrowserAnimationsModule, HttpClientModule,MatCardModule,PokedetallesComponent,PokeListComponent,RouterModule.forRoot(routes)
+    AppRoutingModule,ReactiveFormsModule,FormsModule, BrowserAnimationsModule, HttpClientModule,MatCardModule,MatFormFieldModule,MatButtonModule,MatInputModule,MatSelectModule
   ],
   providers: [ServiciosService],
   bootstrap: [AppComponent]

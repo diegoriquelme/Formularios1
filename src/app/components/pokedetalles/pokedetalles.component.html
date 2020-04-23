@@ -1,1 +1,15 @@
-<p>pokedetalles works!</p>
+<mat-card class="cardContainer">
+    <mat-card-title class="detalle"></mat-card-title>
+    <mat-card-subtitle> {{ pokeinfo.name }}</mat-card-subtitle>
+
+    <div class="container">
+
+      <mat-form-field appearance="fill" floatLabel="never">
+        <mat-label>{{ pokeinfo.name }}</mat-label>
+        <input matInput placeholder="Input">
+      </mat-form-field>
+
+    </div>
+
+</mat-card>
+

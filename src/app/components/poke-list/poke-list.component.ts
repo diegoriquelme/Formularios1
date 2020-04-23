@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiciosService } from '../../Servicios/servicios.service';
+import { Router} from '@angular/router';
 //import { Chart } from 'chart.js';
 
 @Component({
@@ -19,7 +20,7 @@ export class PokeListComponent implements OnInit {
 
 
   constructor(
-      private _servicio:ServiciosService) { }
+      private _servicio:ServiciosService, private router:Router) {  }
 
   ngOnInit() {
     this._servicio.pokeApi().subscribe(res =>
@@ -27,10 +28,10 @@ export class PokeListComponent implements OnInit {
 
   }
 
-/*   goDetails(product): void {
-    const url = `/products/${product.code}`;
-    this.router.navigate([url, { ...product }]);
-  } */
+  goDetails(name:string): void {
+    const url = `/pokedetalles/${name}`;
+    this.router.navigate([url, { name }]);
+  }
 
 
 }
