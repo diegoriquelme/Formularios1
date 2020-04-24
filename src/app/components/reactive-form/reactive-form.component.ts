@@ -19,11 +19,11 @@ export class ReactiveFormComponent implements OnInit {
     });
   }
 
-  onSubmit(form: FormGroup) {
-    console.log('Valid?', form.valid); // true or false
-    console.log('Name', form.value.name);
-    console.log('Email', form.value.email);
-    console.log('Message', form.value.message);
+  onSubmit() {
+    console.log('Valid?', this.myForm.valid); // true or false
+    console.log('Name', this.myForm.value.name);
+    console.log('Email', this.myForm.value.email);
+    console.log('Message', this.myForm.value.message);
   }
 }
 

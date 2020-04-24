@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ServiciosService} from '../../Servicios/servicios.service';
 import {MatTableModule} from '@angular/material/table';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-pokedetalles',
@@ -11,12 +12,16 @@ import {MatTableModule} from '@angular/material/table';
 export class PokedetallesComponent implements OnInit {
 
 
+
   pokeinfo = {name:""};
+
+
 
   constructor(
     private _servicio:ServiciosService,
     private router: Router,
     private route: ActivatedRoute,
+
     //private location: Location,
 
   ) { }
@@ -24,6 +29,7 @@ export class PokedetallesComponent implements OnInit {
 
   ngOnInit() {
     this.getPokemon();
+
   }
 
   getPokemon() {
@@ -35,5 +41,5 @@ export class PokedetallesComponent implements OnInit {
     });
 
 }
-
 }
+

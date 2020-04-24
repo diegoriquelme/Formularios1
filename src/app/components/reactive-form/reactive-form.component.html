@@ -1,6 +1,6 @@
 
 
-<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
   <input formControlName="name" placeholder="Your name">
          <p>el nombre elegido: {{ myForm.get('name').value }}</p>
       <div *ngIf="myForm.get('name').hasError('required')">

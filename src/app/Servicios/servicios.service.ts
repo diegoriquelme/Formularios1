@@ -21,4 +21,5 @@ const url=`https://pokeapi.co/api/v2/pokemon/${pokename}/`;
 return this._http.get(url);
 }
 
+
 }

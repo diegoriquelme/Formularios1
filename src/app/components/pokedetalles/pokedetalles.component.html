@@ -1,15 +1,38 @@
-<mat-card class="cardContainer">
-    <mat-card-title class="detalle"></mat-card-title>
-    <mat-card-subtitle> {{ pokeinfo.name }}</mat-card-subtitle>
+  <mat-card class="cardContainer">
+      <mat-card-title class="detalle"></mat-card-title>
+      <mat-card-subtitle> {{ pokeinfo.name }}</mat-card-subtitle>
+   <div class="container">
 
-    <div class="container">
+        <mat-form-field appearance="fill" floatLabel="never">
+          <mat-label>{{ pokeinfo.name }}</mat-label>
+          <input matInput placeholder="Input">
+        </mat-form-field>
 
-      <mat-form-field appearance="fill" floatLabel="never">
-        <mat-label>{{ pokeinfo.name }}</mat-label>
-        <input matInput placeholder="Input">
-      </mat-form-field>
+        <mat-form-field appearance="fill" floatLabel="never">
+          <mat-label>{{ pokeinfo.height }}</mat-label>
+          <input matInput placeholder="Input">
+        </mat-form-field>
 
-    </div>
+        <mat-form-field appearance="fill" floatLabel="never">
+          <mat-label>{{ pokeinfo.base_experience }}</mat-label>
+          <input matInput placeholder="Input">
+        </mat-form-field>
 
-</mat-card>
+        <mat-form-field appearance="fill" floatLabel="never">
+          <mat-label>{{ pokeinfo.sprites.front_default }}</mat-label>
+          <input matInput placeholder="Input">
+        </mat-form-field>
 
+      </div>
+
+  <!-- Formulario -->
+
+
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ pokeinfo.name }}</mat-card-title>
+      <mat-card-subtitle *ngFor="let poketype of pokeinfo.types">{{ poketype.type.name }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{ pokeinfo.sprites.front_default }}" alt="Photo of a Shiba Inu">
+  </mat-card>
